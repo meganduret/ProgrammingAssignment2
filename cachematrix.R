@@ -2,8 +2,10 @@
 ## functions do
 
 ## Write a short comment describing this function
+#makeCacheMatrix is a function which creates a special "matrix" object that can
+#cache its inverse for the input (which is an invertible square matrix)
+#makeCacheMatrix <- function(x = matrix()) {
 
-makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y){
     x <<- y
@@ -18,6 +20,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+#cacheSolve finds the inverse of the special "matrix" returned by 
+#makeCacheMatrix above. If the inverse has already been found
+#(and the matrix has not changed), then the cachesolve should retrieve the
+#inverse from the cache
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
   inv <- x$getInverse()
